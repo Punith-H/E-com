@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart - Advanced E-Commerce Demo</title>
+    <link rel="stylesheet" href="ecom.css">
+</head>
+<body>
+    <header>
+        <h1>ShopSmart</h1>
+        <span class="cart-link" onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</span>
+    </header>
+
+    <!-- Product Categories Section -->
+    <section class="product-categories">
+        <h2>Categories</h2>
+        <div class="category-list">
+            <button onclick="showCategory('all')">All</button>
+            <button onclick="showCategory('watches')">Watches</button>
+            <button onclick="showCategory('fashion')">Fashion</button>
+            <button onclick="showCategory('electronics')">Electronics</button>
+        </div>
+    </section>
+
+    <!-- Product Listing Section -->
+    <div class="product-list" id="productList">
+        <div class="product" data-category="watches" data-id="1" data-name="Luxury Watch" data-price="199">
+            <img src="https://via.placeholder.com/150" alt="Luxury Watch">
+            <h3>Luxury Watch</h3>
+            <p>$199</p>
+            <button onclick="addToCart(1, 'Luxury Watch', 199)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="fashion" data-id="2" data-name="Leather Jacket" data-price="129">
+            <img src="https://via.placeholder.com/150" alt="Leather Jacket">
+            <h3>Leather Jacket</h3>
+            <p>$129</p>
+            <button onclick="addToCart(2, 'Leather Jacket', 129)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="electronics" data-id="3" data-name="Smartphone" data-price="499">
+            <img src="https://via.placeholder.com/150" alt="Smartphone">
+            <h3>Smartphone</h3>
+            <p>$499</p>
+            <button onclick="addToCart(3, 'Smartphone', 499)">Add to Cart</button>
+        </div>
+        <div class="product" data-category="fashion" data-id="4" data-name="Sneakers" data-price="89">
+            <img src="https://via.placeholder.com/150" alt="Sneakers">
+            <h3>Sneakers</h3>
+            <p>$89</p>
+            <button onclick="addToCart(4, 'Sneakers', 89)">Add to Cart</button>
+        </div>
+        <!-- More Products Can Be Added Here -->
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart-container" id="cartContainer">
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+            <h3>Total: $<span id="cartTotal">0.00</span></h3>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
